@@ -8,50 +8,6 @@
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/view_1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_constraintWigth_default="spread"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="288dp"
-        android:text="view_1"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/view_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:text="view_2"
-        android:textSize="14sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/view_1"
-        app:layout_constraintLeft_toRightOf="@id/view_1" />
-
-    <TextView
-        android:id="@+id/view_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="76dp"
-        android:text="view_3"
-        android:textSize="14sp"
-        app:layout_constraintLeft_toRightOf="@id/view_1"
-        app:layout_constraintTop_toBottomOf="@id/view_1" />
-
-    <TextView
-        android:id="@+id/view_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="24dp"
-        android:text="view_4"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@id/view_2"
-        app:layout_constraintLeft_toRightOf="@id/view_2" />
-
     <ImageView
         android:id="@+id/image"
         android:layout_width="0dp"
