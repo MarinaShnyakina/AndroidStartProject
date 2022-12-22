@@ -63,25 +63,25 @@ public class Calculator extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(LifecycleTag, "I'm onStop and I'm started");
+        Log.d(LifecycleTag, "I'm onStop(), and I'm started");
     }
 
     @Override
     protected void onDestroy() {
     super.onDestroy();
-        Log.d(LifecycleTag, "I'm onDestroy and I'm started");
+        Log.d(LifecycleTag, "I'm onDestroy(), and I'm started");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(LifecycleTag, "I'm onPause and I'm started");
+        Log.d(LifecycleTag, "I'm onPause(), and I'm started");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(LifecycleTag, "I'm onResume() and I'm started");
+        Log.d(LifecycleTag, "I'm onResume(), and I'm started");
     }
 
     private void calculateAnswer() {
@@ -103,6 +103,7 @@ public class Calculator extends AppCompatActivity {
 
         float numone = 0;
         float numtwo = 0;
+
         String num1 = numOne.getText().toString();
         String num2 = numTwo.getText().toString();
 
@@ -113,6 +114,7 @@ public class Calculator extends AppCompatActivity {
         if(num2.equals("") && num2 != null) {
             numtwo = Integer.parseInt(numTwo.getText().toString());
         }
+
 
         Log.d(LogcatTag, "Successfully grabbed date from input fields");
         Log.d(LogcatTag, "numone is: " + numone + " ; "+" numtwo is: " + numtwo);
