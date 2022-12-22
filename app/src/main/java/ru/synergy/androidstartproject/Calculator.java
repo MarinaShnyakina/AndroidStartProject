@@ -43,7 +43,6 @@ public class Calculator extends AppCompatActivity {
                 getApplicationContext().getSharedPreferences("PREFS", MODE_PRIVATE);
         */
 
-        // intent - посылка
 
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
