@@ -88,7 +88,6 @@
         android:layout_marginTop="92dp"
         android:text="You answer will displayed here"
         app:layout_constraintEnd_toEndOf="@id/calc"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@id/calc"
         app:layout_constraintTop_toBottomOf="@id/calc" />
 
