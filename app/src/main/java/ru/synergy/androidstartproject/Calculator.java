@@ -29,22 +29,6 @@ public class Calculator extends AppCompatActivity {
 
         final Button calculate = (Button) findViewById(R.id.calc);
 
-        /* Context training
-                TextView textView = new TextView(this);
-        ListAdapter adapter = new;
-        SimpleCursorAdapter(getApplicationContext(),);
-
-        // Доступ из класса Activity - наследник Context
-        getSystemService(LAYOUT_INFLATER_SERVISE);
-
-        // Shared prefs - доступ с использованием контекста приложения
-
-        SharedPreferences prefs =
-                getApplicationContext().getSharedPreferences("PREFS", MODE_PRIVATE);
-        */
-
-        // intent - посылка
-
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,6 +132,10 @@ public class Calculator extends AppCompatActivity {
         Log.d(LogcatTag, "The result of operations is: " + solution);
 
         answer.setText("The answer is " + solution);
+
+        Context contextApp = getApplicationContext();
+        Context context = getBaseContext();
+
 
     }
 }
