@@ -49,6 +49,8 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d(LogcatTag, "Button have been pushed");
                 calculateAnswer();
+                Intent i = new Intent(Calculator.this, MainActivity.class); // написать письмо
+                startActivity(i); // отправить его
             }
         });
     }
