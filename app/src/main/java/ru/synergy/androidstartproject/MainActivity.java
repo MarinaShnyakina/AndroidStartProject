@@ -1,53 +1,70 @@
 package ru.synergy.androidstartproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
-import android.graphics.Color;
-import android.icu.text.RelativeDateTimeFormatter;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity implements View.OnClickListener {
+
+    private static final int REQ_C = 1;
+    EditText et;
+    private TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculator);
+        setContentView(R.layout.second_layout);
 
-        //TextView textView = (TextView) findViewById(R.id.normal);
+        //et = (EditText) findViewById(R.id.et);
+        tv = (TextView) findViewById(R.id.tv);
 
-        //textView.setText("Text from Java code");
-        //textView.setTextColor(Color.RED);
+        Button btn = (Button) findViewById(R.id.button);
+        Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn3 = (Button) findViewById(R.id.button3);
 
+        btn.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
 
-
-        // мы получается текст из second_layout поменяли на Hello from Java
-        //TextView textView = (TextView) findViewById(R.id.header);
-
-        //textView.setText("Hello from Java");
-
-
-        /*ConstraintLayout constraintlayout = new ConstraintLayout(this);
-        TextView textView = new TextView(this);
-        textView.setText("Hello Android!");
-        textView.setTextSize(26);
-
-        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(
-                ConstraintLayout.LayoutParams.WRAP_CONTENT,
-                ConstraintLayout.LayoutParams.WRAP_CONTENT);
-
-        // тут мы привязываем наш текст к точкам экрана, чтобы он никуда не "убегал"
-        layoutParams.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
-        layoutParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        layoutParams.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID;
-
-        textView.setLayoutParams(layoutParams);
-
-        constraintlayout.addView(textView);
-
-        setContentView(constraintlayout);*/
     }
+
+
+
+    @Override
+    public void onClick(View view) {
+        Intent i;
+        switch (view.getId()) {
+            case R.id.button:
+                i = new Intent(this, MainActivity2.class);
+                startActivity(i);
+                break;
+            case R.id.button2:
+                i = new Intent(this, ToInfActivity.class);
+                String eText = et.getText().toString();
+                i.putExtra("et", eText);
+                break;
+            /*case R.id.button3:
+                i = new Intent(this, ComeBackActivity.class);
+                startActivityForResult(i, REQ_C);*/
+        }
+    }
+
+
+/*    @Override
+    public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case RESULT_OK:
+                tv.setText(data.getStringExtra("et"));
+        }
+        return false;
+    }*/
 }
 

@@ -123,22 +123,22 @@ public class Calculator extends AppCompatActivity {
         float solution = 0;
 
         if(add.isChecked()){
-            Log.d(LogcatTag, "Opetation is add");
+            Log.d(LogcatTag, "Operation is add");
             solution = numone + numtwo;
         }
 
         if(subtract.isChecked()){
-            Log.d(LogcatTag, "Opetation is subtract");
+            Log.d(LogcatTag, "Operation is subtract");
             solution = numone - numtwo;
         }
 
         if(multiply.isChecked()){
-            Log.d(LogcatTag, "Opetation is multiply");
+            Log.d(LogcatTag, "Operation is multiply");
             solution = numone * numtwo;
         }
 
         if(divide.isChecked()){
-            Log.d(LogcatTag, "Opetation is divide");
+            Log.d(LogcatTag, "Operation is divide");
             if (numtwo == 0){
                 Toast.makeText(this, "Number two Cannot be zero", Toast.LENGTH_SHORT).show();
                 return;
