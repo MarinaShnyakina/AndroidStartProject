@@ -1,5 +1,9 @@
 package ru.synergy.androidstartproject;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -11,18 +15,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int REQ_C = 1;
     EditText et;
     private TextView tv;
+
+    ActivityResultLauncher<Intent> mStartActivityForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                   Intent intent = result.getData();
+                   tv.setText(intent.getStringExtra("tv"));
+
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_layout);
 
-        //et = (EditText) findViewById(R.id.et);
+        et = (EditText) findViewById(R.id.et);
         tv = (TextView) findViewById(R.id.tv);
 
         Button btn = (Button) findViewById(R.id.button);
@@ -50,9 +66,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 String eText = et.getText().toString();
                 i.putExtra("et", eText);
                 break;
-            /*case R.id.button3:
+            case R.id.button3:
                 i = new Intent(this, ComeBackActivity.class);
-                startActivityForResult(i, REQ_C);*/
+                mStartActivityForResult.launch(i);
         }
     }
 
