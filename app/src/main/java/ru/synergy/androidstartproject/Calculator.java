@@ -63,7 +63,7 @@ public class Calculator extends AppCompatActivity {
 
             // восстановление
             e.printStackTrace();
-            Toast.makeText(Calculator.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(Calculator.this, e.getMessage() + " of class " + e.getClass(), Toast.LENGTH_LONG).show();
             dropFields();
 
 
@@ -188,7 +188,7 @@ public class Calculator extends AppCompatActivity {
 
         answer.setText("The answer is " + solution);
 
-        switch ( (int) Math.random()*2) {
+        switch ( (int) (Math.random() * 3)) {
             case 0: throw new ArithmeticException("I am generated arithmetical exception");
             case 1: throw new IOException("I am generated IOexception");
         }
